@@ -46,10 +46,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed; /* Fijar la barra de navegación en la parte superior */
-  top: 0;
-  left: 0;
-  z-index: 1000; /* Asegurarse de que esté por encima de otros elementos */
+  
 }
 
 nav a {
@@ -133,4 +130,8 @@ button:focus-visible {
     font-size: 0.85em;
     padding: 0.4em 0.8em;
   }
+}
+
+p{
+  font-size: 15px;
 }
