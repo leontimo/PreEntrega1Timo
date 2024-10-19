@@ -1,11 +1,22 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useCart } from './CartContext';
+import Checkout from './checkout';
 
 const Cart = () => {
   const { cartItems, removeFromCart, clearCart, getCartTotal } = useCart();
+  const [isCheckingOut, setIsCheckingOut] = useState(false)
+
+  if(isCheckingOut){
+    //renderizar el componente si se a hecho click en el boton
+    return <Checkout />
+  }
 
   if (cartItems.length === 0) {
-    return <div>Your cart is empty</div>;
+    return <div>No tenes productos en el carrito</div>;
+  }
+
+  const handleCheckout = () => {
+    setIsCheckingOut(true); 
   }
 
   return (
@@ -20,8 +31,8 @@ const Cart = () => {
         </div>
       ))}
       <h3>Total: ${getCartTotal()}</h3>
-      <button onClick={clearCart}>Clear Cart</button>
-      <button>Checkout</button>
+      <button onClick={clearCart}>limpiar carrito</button>
+      <button onClick={handleCheckout}>Checkout</button>
     </div>
   );
 };

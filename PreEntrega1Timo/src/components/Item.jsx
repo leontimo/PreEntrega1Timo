@@ -6,7 +6,7 @@ const Item = ({ item }) => {
     return (
 
         <div className="item-card">
-            <img src={item.pictureUrl} alt={item.title} />
+            <img src={item.image} alt={item.title} />
             <h2>{item.title}</h2>
             <span>${item.price}</span>
 
