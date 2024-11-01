@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { db } from "../firebaseconfig";
+import { db } from "@/firebaseconfig";
 import { collection, getDocs } from "firebase/firestore";
 import Item from "./Item";
 import "../styles/navbar.scss";
